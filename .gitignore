@@ -1,0 +1,11 @@
+package-lock.json
+node_modules
+.env
+.env.local
+.env.development
+.env.production
+.DS_Store
+.env.example
+.env.test
+package.json
+*.properties
