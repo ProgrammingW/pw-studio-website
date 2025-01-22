@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
+// Temporary page components until we create the real ones
+const Home = () => <div>Home Page</div>;
+const Roadmap = () => <div>Roadmap Page</div>;
+const Contact = () => <div>Contact Page</div>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
